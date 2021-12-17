@@ -1,0 +1,20 @@
+{
+  "name": "chatsurf-cli",
+  "version": "1.0.0",
+  "description": "ChatSurf CLI",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "C1200",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.9",
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^2.6.6",
+    "update-notifier": "^5.1.0"
+  }
+}
