@@ -14,6 +14,7 @@ const pkg = require("./package.json");
 const program = new Command();
 
 var update = updateNotifier({pkg});
+update.notify();
 
 program
     .name(pkg.name)
@@ -48,8 +49,6 @@ program
           console.log(chalk.green(`Created ChatSurf server in: ${chalk.blue(root)}!`));
           console.log(chalk.green("\nNext Steps:\nStart your server:"));
           console.log(chalk.blue(` $ cd ${root}\n $ npm start`));
-          
-          update.notify();
         });
       });
     });
@@ -70,6 +69,10 @@ program
         
         console.log(chalk.green(`Installed plugin: ${chalk.blue(plugin)}`));
       });
+    } else {
+      console.log(chalk.red(`ERROR: Server responded with status code ${res.status}`));
+      if (res.status === 404)
+        console.log(chalk.red("  This may be because the requested plugin doesn't exist"));
     }
   });
 
