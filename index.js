@@ -61,7 +61,7 @@ program
     var root = path.resolve("plugins");
     fs.ensureDirSync(root);
   
-    var res = await fetch(`https://chatsurfapp.github.io/plugins/${plugin}.js`);
+    var res = await fetch(`https://chatsurf.c1200.cf/plugins/${plugin}.js`);
   
     if (res.ok) {
       pipeline(res.body, fs.createWriteStream(path.join(root, `${plugin}.js`)), (err) => {
